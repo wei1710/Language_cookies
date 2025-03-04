@@ -6,8 +6,8 @@ class Language implements ReadLanguage {
     private $language;
     private $defaultLanguage = 'en';
 
-    public function __construct($lang) {
-        $this->language = in_array($lang, ['en', 'da']) ? $lang : $this->defaultLanguage;
+    public function __construct($language) {
+        $this->language = in_array($language, ['en', 'da']) ? $language : $this->defaultLanguage;
     }
 
     public function readLanguage() {

@@ -1,3 +1,3 @@
-document.getElementById("language").addEventListener("change", function() {
-  document.getElementById("languageForm").submit();
+document.getElementById("languageForm").addEventListener("change", function() {
+  this.submit();
 });
