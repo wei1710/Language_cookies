@@ -1,11 +1,13 @@
 <?php
+session_start();
+
 require_once 'src/Classes/Language.php';
 
-$lang = isset($_COOKIE['language']) ? $_COOKIE['language'] : 'en';
+$lang = isset($_SESSION['language']) ? $_SESSION['language'] : 'en';
 
 if (isset($_GET['lang']) && in_array($_GET['lang'], ['en', 'da'])) {
     $lang = $_GET['lang'];
-    setcookie('language', $lang, time() + (60 * 60 * 24 * 30), "/");
+    $_SESSION['language'] = $lang;
     header("Location: index.php");
     exit;
 }
